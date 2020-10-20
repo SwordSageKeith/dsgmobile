@@ -1,0 +1,12 @@
+{
+  "name": "dsgmobile",
+  "displayName": "dsgmobile",
+  "expo": {
+    "name": "dsgmobile",
+    "slug": "dsgmobile",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
