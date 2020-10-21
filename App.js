@@ -1,21 +1,46 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, Dimensions } from 'react-native';
+import { PanGestureHandler, ScrollView, State } from "react-native-gesture-handler";
 
-export default function App() {
+import FirstPage from './FirstPage'
+import SecondPage from './SecondPage'
+
+const { width, height } = Dimensions.get("window");
+
+/*export default*/ function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
     </View>
   );
 }
 
+
+const Swiper = () => {
+  return (<View style={styles.container}>
+      <ScrollView snapToInterval ={width} decelerationRate="fast" horizontal pagingEnabled="true">
+        <FirstPage style = {styles.picture}/>
+        <SecondPage style = {styles.picture}/>
+      </ScrollView>
+  </View>)
+}
+
+export default Swiper;
+
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "black",
+  },
+  picture: {
+    width: width,
+    height,
+    overflow: "hidden",
+  },
+  image: {
+    ...StyleSheet.absoluteFillObject,
+    width: undefined,
+    height: undefined,
   },
 });
