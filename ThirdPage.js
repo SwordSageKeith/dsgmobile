@@ -5,11 +5,12 @@ import { StyleSheet, View, Button, Dimensions, Image, Text} from 'react-native';
 //import all the components we are going to use.
 
 const { width, height } = Dimensions.get("window");
+import store from './store.png';
 
 
 export default class FirstPage extends Component {
   static navigationOptions = {
-    title: 'First Page',
+    title: 'Third Page',
     //Sets Header text of Status Bar
     headerStyle: {
       backgroundColor: '#f4511e',
@@ -26,14 +27,7 @@ export default class FirstPage extends Component {
   render() {
     return (
       <View style={styles.container}>
-       <Text style={styles.body}>Profile</Text>
-       <Image source={{
-          uri: 'https://3.bp.blogspot.com/-qDc5kIFIhb8/UoJEpGN9DmI/AAAAAAABl1s/BfP6FcBY1R8/s1600/BlueHead.jpg',
-        }} style = {styles.image}></Image>
-       <Text style={styles.body}>Something</Text>
-       <Text style={styles.body}>Something</Text>
-       <Text style={styles.body}>Something</Text>
-       <Text style={styles.body}>Something</Text>
+          <Image source={store} style={styles.width} />
       </View>
     );
   }
@@ -53,5 +47,8 @@ const styles = StyleSheet.create({
   image: {
       width: 100,
       height: 100,
+  },
+  width:{
+      width:width
   }
 });

@@ -1,12 +1,16 @@
 //This is an example code for Navigator// 
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 //import react in our code. 
-import { StyleSheet, View, Text, Dimensions} from 'react-native';
+import { StyleSheet, View, Text, Dimensions } from 'react-native';
 //import all the components we are going to use.
+
+import CameraTest from './CameraTest';
+
+import Camera from 'expo';
 
 const { width, height } = Dimensions.get("window");
 
-export default class SecondPage extends Component {
+export default class SecondPage extends PureComponent {
   static navigationOptions = {
     title: 'Second Page',
     //Sets Header text of Status Bar
@@ -14,7 +18,7 @@ export default class SecondPage extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Deals and such</Text>
+        <CameraTest />
       </View>
     );
   }
@@ -23,7 +27,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: width,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
